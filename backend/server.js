@@ -9,15 +9,12 @@ import dashboardRouter from "./routes/dashboardRoutes.js";
 import patientRouter from "./routes/patientRoutes.js";
 import medicineRouter from "./routes/medicineRoute.js";
 const app = express();
-
-// Database
-dbConnect();
-
 // Middlewares
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+// Database
+dbConnect();
 // Home Route
 app.get("/", (req, res) => {
   res.send("<h1>Doctor Shop Backend Running...</h1>");
